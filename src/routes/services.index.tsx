@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, CtaBand } from "@/components/site/Blocks";
+import { Link } from "@tanstack/react-router";
+import { PageHero, CtaBand, Eyebrow } from "@/components/site/Blocks";
+import { SERVICES, TRACKS } from "@/lib/site";
 
 export const Route = createFileRoute("/services/")({
   head: () => ({
@@ -19,6 +21,20 @@ function Page() {
   return (
     <>
       <PageHero eyebrow="Services" title="Practical solutions across finance, data and technology." lead="Choose the area that matches what your business needs." />
+      {(["finance", "digital"] as const).map((t) => (
+        <section key={t} className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+          <Eyebrow>{TRACKS[t].name}</Eyebrow>
+          <p className="text-muted-foreground">{TRACKS[t].lead}</p>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.filter((s) => s.track === t).map((s) => (
+              <Link key={s.slug} to="/services/$slug" params={{ slug: s.slug }} className="rounded-2xl border bg-card p-6 transition-shadow hover:shadow-lg">
+                <h3 className="text-lg font-semibold text-navy">{s.name}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.short}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      ))}
       <CtaBand title="Let's talk about your business" body="Tell us what you need and we'll reply with clear next steps." cta="Contact us" />
     </>
   );
