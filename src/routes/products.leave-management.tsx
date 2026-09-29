@@ -1,3 +1,4 @@
+import { LEAVE_FEATURES, LEAVE_DEMO_URL } from "@/lib/site";
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CtaBand } from "@/components/site/Blocks";
 
@@ -19,6 +20,17 @@ function Page() {
   return (
     <>
       <PageHero eyebrow="Product" title="Leave Management Software" lead="Requests, approvals and live balances for employees, managers and admins." />
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {LEAVE_FEATURES.map((f) => (
+            <div key={f.title} className="rounded-2xl border bg-card p-6">
+              <h3 className="font-semibold text-navy">{f.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{f.body}</p>
+            </div>
+          ))}
+        </div>
+        <a href={LEAVE_DEMO_URL} target="_blank" rel="noreferrer" className="mt-10 inline-flex rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground">Try the live demo</a>
+      </section>
       <CtaBand title="Let's talk about your business" body="Tell us what you need and we'll reply with clear next steps." cta="Contact us" />
     </>
   );
