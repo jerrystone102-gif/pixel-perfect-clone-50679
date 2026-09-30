@@ -67,6 +67,7 @@ function Lightbox({ items, index, onChange, onClose }: { items: PortfolioItem[];
 
   useEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [index]);
 
+  if (!p) return null;
   return (
     <div role="dialog" aria-modal="true" aria-label={p.title} className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/85 p-3 backdrop-blur-sm animate-in fade-in duration-200 md:p-8" onClick={onClose}>
       <div className="relative flex max-h-full w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-card shadow-2xl animate-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>

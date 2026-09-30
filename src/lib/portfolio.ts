@@ -64,14 +64,14 @@ function build(category: PortfolioCategory, prefix: string, count: number, tall 
   return Array.from({ length: count }, (_, i) => {
     const n = pad(i + 1);
     const cover = U[tall ? `${prefix}-${n}-cover.webp` : `${prefix}-${n}.webp`];
-    const full = tall ? U[`${prefix}-${n}-full.webp`] : cover;
+    const full = (tall ? U[`${prefix}-${n}-full.webp`] : cover) ?? "";
     const title = `${CATEGORY_LABEL[category]} — Project ${n}`;
     return {
       id: `${prefix}-${n}`,
       category,
       title,
-      description: COPY[category][i % COPY[category].length],
-      cover,
+      description: COPY[category][i % COPY[category].length] ?? "",
+      cover: cover ?? "",
       full,
       tall,
       alt: `${title} by Nedd Digital`,

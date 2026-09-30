@@ -46,7 +46,7 @@ function Page() {
       const errs: Errors = {};
       for (const i of r.error.issues) errs[i.path[0] as keyof Errors] ??= i.message;
       setErrors(errs);
-      document.getElementById(Object.keys(errs)[0])?.focus();
+      document.getElementById(Object.keys(errs)[0] ?? "")?.focus();
       return;
     }
     setErrors({});
