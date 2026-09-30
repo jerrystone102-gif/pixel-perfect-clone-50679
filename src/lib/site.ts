@@ -120,13 +120,13 @@ export const SERVICES: Service[] = [
     slug: "power-bi-data-analytics",
     track: "finance",
     name: "Power BI & Data Analytics",
-    short: "Interactive Power BI dashboards built on your QuickBooks, Excel and business data.",
-    metaTitle: "Power BI Dashboards & Data Analytics | Nedd Digital",
+    short: "Power BI and Tableau dashboards built on your QuickBooks, Excel and SQL data.",
+    metaTitle: "Power BI & Tableau Dashboards, Data Analytics | Nedd Digital",
     metaDescription:
-      "Power BI dashboards for cash flow, P&L, AR aging and business performance, connected to QuickBooks, Excel, SQL and other business data.",
-    heroTitle: "See what's happening in your business at a glance.",
+      "Power BI and Tableau dashboards for cash flow, P&L, AR aging and KPIs, built from QuickBooks, Excel and SQL data.",
+    heroTitle: "Turn business data into dashboards your team can actually use.",
     heroLead:
-      "We turn your QuickBooks, Excel and other business data into Power BI dashboards that answer the questions you ask every week.",
+      "Whether your business works with Power BI, Tableau, Excel, QuickBooks or SQL data, we help turn disconnected information into clear, interactive reports.",
     problemTitle: "Reports exist. Answers don't.",
     problems: [
       "Monthly reports arrive as spreadsheets that take an hour to read and still don't answer the question.",
@@ -134,17 +134,19 @@ export const SERVICES: Service[] = [
       "Data sits in separate places (QuickBooks, Excel files, other systems) and never comes together.",
     ],
     solution:
-      "We connect your data sources and build focused Power BI dashboards around the decisions you make, so you can filter, drill in and compare periods yourself.",
+      "We connect your data sources and build focused Power BI or Tableau dashboards around the decisions you make, so you can filter, drill in and compare periods yourself.",
     offerings: [
       { title: "Cash flow dashboards", body: "Money in and money out over time, so you can spot tight months before they arrive." },
       { title: "P&L dashboards", body: "Revenue, expenses and margin by month, category or department, with period comparisons." },
       { title: "AR aging", body: "Who owes you, how much and how long it's been outstanding." },
-      { title: "Business performance", body: "The handful of numbers that matter for your business, in one view." },
+      { title: "Business performance & KPIs", body: "The handful of numbers that matter for your business, in one view." },
+      { title: "Tableau dashboards", body: "Interactive Tableau views for teams that already work in Tableau." },
+      { title: "Excel & SQL reporting", body: "Cleaner Excel reports and SQL queries that pull the right numbers together." },
     ],
     deliverables: [
       "Connections to QuickBooks, Excel, SQL and other business data",
       "Data model built for your reporting questions",
-      "Interactive Power BI reports with filters and drill-downs",
+      "Interactive Power BI or Tableau reports with filters and drill-downs",
       "Before/after and period-over-period comparisons",
       "Walkthrough so your team can use the dashboards confidently",
     ],
