@@ -1,18 +1,20 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { Check } from "lucide-react";
 import { useState } from "react";
-import { PageHero, CtaBand } from "@/components/site/Blocks";
+import { PageHero, CtaBand, Eyebrow, PrimaryLink } from "@/components/site/Blocks";
+import { PortfolioGrid } from "@/components/site/PortfolioGrid";
 import leaveImg from "@/assets/leave-management-demo.jpg.asset.json";
-import siteImg from "@/assets/nedddigital-website.jpg.asset.json";
-import { LEAVE_DEMO_URL } from "@/lib/site";
+import { PORTFOLIO, PORTFOLIO_CATEGORIES, type PortfolioCategory } from "@/lib/portfolio";
+
+const DESC = "Selected websites, web development, mobile app and brand identity work by Nedd Digital, plus our Leave Management Software product.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio | Nedd Digital" },
-      { name: "description", content: "Real work from Nedd Digital: our Leave Management Software product and business website projects." },
-      { property: "og:title", content: "Portfolio | Nedd Digital" },
-      { property: "og:description", content: "Real work from Nedd Digital: our Leave Management Software product and business website projects." },
+      { title: "Portfolio — Websites, Apps & Branding | Nedd Digital" },
+      { name: "description", content: DESC },
+      { property: "og:title", content: "Portfolio — Websites, Apps & Branding | Nedd Digital" },
+      { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -20,67 +22,63 @@ export const Route = createFileRoute("/portfolio")({
   component: Page,
 });
 
-type Project = { name: string; category: "Products" | "Websites"; image: string; description: string; details: string[]; link: { label: string; href?: string; to?: string } };
-
-const PROJECTS: Project[] = [
-  {
-    name: "Leave Management Software",
-    category: "Products",
-    image: leaveImg.url,
-    description: "Our own web application for handling leave requests, approvals and balances across employee, manager and admin roles.",
-    details: ["Role-based views", "Approvals workflow", "Live balances", "Reports & audit logs"],
-    link: { label: "Open live demo", href: LEAVE_DEMO_URL },
-  },
-  {
-    name: "Nedd Digital QuickBooks & Power BI website",
-    category: "Websites",
-    image: siteImg.url,
-    description: "A marketing website for QuickBooks bookkeeping and Power BI services, with service pages, pricing tables and a dashboard preview.",
-    details: ["Responsive design", "Pricing pages", "Booking calls-to-action"],
-    link: { label: "Visit site", href: "https://nedddigital.com" },
-  },
-];
-
-const CATS = ["All", "Products", "Websites"] as const;
-
 function Page() {
-  const [cat, setCat] = useState<(typeof CATS)[number]>("All");
-  const list = PROJECTS.filter((p) => cat === "All" || p.category === cat);
+  const [cat, setCat] = useState<"all" | PortfolioCategory>("all");
+  const list = PORTFOLIO.filter((p) => cat === "all" || p.category === cat);
+  const count = (id: string) => (id === "all" ? PORTFOLIO.length : PORTFOLIO.filter((p) => p.category === id).length);
+
   return (
     <>
-      <PageHero eyebrow="Portfolio" title="Work we've built." lead="Real projects only — shown as they are, with live links where available." />
+      <PageHero
+        eyebrow="Portfolio"
+        title="Work that shows what we build."
+        lead="Explore selected websites, digital experiences, mobile applications and brand identities created for real business needs."
+      />
 
-      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
-        <div role="tablist" aria-label="Filter projects" className="flex flex-wrap gap-2">
-          {CATS.map((c) => (
-            <button key={c} role="tab" aria-selected={cat === c} onClick={() => setCat(c)} className={`rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${cat === c ? "border-navy bg-navy text-on-navy" : "text-navy hover:bg-muted"}`}>{c}</button>
+      <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 md:py-20">
+        <p className="max-w-2xl text-lg text-muted-foreground">
+          Every project starts with the same question: what does the business need its customers to see, understand and do? Here's a selection of the answers. Click any project to view it in full.
+        </p>
+
+        <div role="group" aria-label="Filter projects by category" className="mt-10 flex flex-wrap gap-2">
+          {PORTFOLIO_CATEGORIES.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              aria-pressed={cat === c.id}
+              onClick={() => setCat(c.id)}
+              className={`rounded-full border px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${cat === c.id ? "border-navy bg-navy text-on-navy" : "text-navy hover:bg-muted"}`}
+            >
+              {c.label} <span className="ml-1 opacity-60">{count(c.id)}</span>
+            </button>
           ))}
         </div>
 
-        <div className="mt-10 grid gap-10">
-          {list.map((p, i) => (
-            <article key={p.name} className={`grid items-center gap-8 overflow-hidden rounded-3xl border bg-card lg:grid-cols-5 ${i % 2 ? "lg:[&>div:first-child]:order-2" : ""}`}>
-              <div className="bg-muted p-4 lg:col-span-3 lg:p-8">
-                <img src={p.image} alt={`Screenshot of ${p.name}`} loading="lazy" className="w-full rounded-xl border shadow-lg" />
-              </div>
-              <div className="p-8 lg:col-span-2 lg:pl-0">
-                <span className="rounded-full bg-accent/20 px-3 py-1 text-xs font-semibold text-navy">{p.category}</span>
-                <h2 className="mt-4 text-2xl font-semibold text-navy">{p.name}</h2>
-                <p className="mt-3 text-muted-foreground">{p.description}</p>
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {p.details.map((d) => <li key={d} className="rounded-md border px-2.5 py-1 text-xs text-muted-foreground">{d}</li>)}
-                </ul>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  <a href={p.link.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 font-semibold text-navy hover:underline">{p.link.label}<ArrowUpRight className="h-4 w-4" /></a>
-                  {p.category === "Products" && <Link to="/products/leave-management" className="font-semibold text-navy-soft hover:underline">Product details</Link>}
-                </div>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10">
+          <PortfolioGrid key={cat} items={list} />
         </div>
       </section>
 
-      <CtaBand title="Have a project in mind?" body="Tell us what you want to build and we'll reply with clear next steps." cta="Start a project" />
+      <section className="px-5 pb-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 overflow-hidden rounded-3xl border bg-card lg:grid-cols-2">
+          <div className="p-8 md:p-12">
+            <Eyebrow>Featured product</Eyebrow>
+            <h2 className="text-3xl font-semibold text-navy md:text-4xl">Leave Management Software</h2>
+            <p className="mt-4 text-muted-foreground">An employee leave management system built to simplify leave requests, approvals, balances and administration.</p>
+            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+              {["Admin, manager & employee roles", "Approval workflow", "Live leave balances", "Reports & audit logs"].map((f) => (
+                <li key={f} className="flex gap-2 text-sm"><Check className="h-4 w-4 shrink-0 text-navy-soft" />{f}</li>
+              ))}
+            </ul>
+            <div className="mt-8"><PrimaryLink to="/products/leave-management">Explore the product</PrimaryLink></div>
+          </div>
+          <div className="bg-muted p-4 md:p-8">
+            <img src={leaveImg.url} alt="Leave Management Software dashboard" loading="lazy" className="w-full rounded-xl border shadow-lg" />
+          </div>
+        </div>
+      </section>
+
+      <CtaBand title="Have a project in mind?" body="Tell us what you want to build and we'll reply with clear next steps." cta="Let's discuss your project" />
     </>
   );
 }
