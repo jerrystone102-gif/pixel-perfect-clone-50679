@@ -29,7 +29,7 @@ const STEPS = [
 
 const WHY = [
   { title: "Finance and tech together", body: "Bookkeeping, Power BI and Tableau dashboards, automation and software from one team, so nothing gets lost between providers." },
-  { title: "Clear pricing", body: "Published packages for bookkeeping and dashboards, and a written quote before any custom work starts." },
+  { title: "Clear quotes", body: "A written quote and scope before any work starts, so you always know what you are paying for." },
   { title: "Plain communication", body: "Simple explanations, regular updates and a single point of contact." },
 ];
 
