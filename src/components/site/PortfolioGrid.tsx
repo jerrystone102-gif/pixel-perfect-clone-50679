@@ -65,7 +65,9 @@ function Lightbox({ items, index, onChange, onClose }: { items: PortfolioItem[];
     };
   }, [go, onClose]);
 
-  useEffect(() => scrollRef.current?.scrollTo({ top: 0 }), [index]);
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [index]);
 
   if (!p) return null;
   return (
