@@ -4,6 +4,7 @@ import { PageHero, PrimaryLink, GhostLink, Eyebrow, ProcessSteps, CtaBand } from
 import { DemoDashboard } from "@/components/site/DemoDashboard";
 import { Reveal } from "@/components/site/Reveal";
 import { SERVICES, TRACKS, LEAVE_FEATURES, type Track } from "@/lib/site";
+import { PORTFOLIO, CATEGORY_LABEL } from "@/lib/portfolio";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -20,12 +21,21 @@ export const Route = createFileRoute("/")({
 });
 
 const STEPS = [
-  { title: "Discover", body: "We learn how your business runs today." },
+  { title: "Understand", body: "We learn how your business runs and what you need." },
   { title: "Plan", body: "Clear scope, timeline and price up front." },
   { title: "Build", body: "Work delivered in visible stages." },
-  { title: "Review", body: "You test; we refine." },
-  { title: "Launch", body: "Handover and ongoing support." },
+  { title: "Refine", body: "You review, we adjust, then hand over with support." },
 ];
+
+const WHY = [
+  { title: "Finance and tech together", body: "Bookkeeping, Power BI and Tableau dashboards, automation and software from one team, so nothing gets lost between providers." },
+  { title: "Clear pricing", body: "Published packages for bookkeeping and dashboards, and a written quote before any custom work starts." },
+  { title: "Plain communication", body: "Simple explanations, regular updates and a single point of contact." },
+];
+
+const PREVIEW = (["websites", "webdev", "mobile", "branding"] as const)
+  .map((c) => PORTFOLIO.find((p) => p.category === c))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 function TrackCard({ track }: { track: Track }) {
   return (
@@ -96,6 +106,43 @@ function Index() {
               <li key={f.title} className="flex gap-2 text-sm"><Check className="h-4 w-4 shrink-0 text-navy-soft" />{f.title}</li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="bg-muted/50">
+        <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+          <Eyebrow>Why Nedd Digital</Eyebrow>
+          <h2 className="max-w-2xl text-3xl font-semibold text-navy md:text-4xl">One team for your numbers and your technology.</h2>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {WHY.map((w, i) => (
+              <Reveal key={w.title} delay={i * 80}>
+                <div className="h-full rounded-2xl border bg-card p-6">
+                  <h3 className="text-lg font-semibold text-navy">{w.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{w.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <Eyebrow>Portfolio</Eyebrow>
+            <h2 className="text-3xl font-semibold text-navy md:text-4xl">Recent work</h2>
+          </div>
+          <GhostLink to="/portfolio" light={false}>View full portfolio</GhostLink>
+        </div>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PREVIEW.map((p) => (
+            <Link key={p.id} to="/portfolio" className="group overflow-hidden rounded-2xl border bg-card">
+              <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <img src={p.cover} alt={p.alt} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <p className="p-4 text-sm font-semibold text-navy">{CATEGORY_LABEL[p.category]}</p>
+            </Link>
+          ))}
         </div>
       </section>
 

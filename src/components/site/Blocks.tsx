@@ -57,7 +57,7 @@ export function ProcessSteps({ steps, title = "How we work" }: { steps: { title:
     <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
       <Eyebrow>Our process</Eyebrow>
       <h2 className="text-3xl font-semibold text-navy md:text-4xl">{title}</h2>
-      <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 lg:grid-cols-5" style={{ gridTemplateColumns: undefined }}>
+      <ol className={`mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border sm:grid-cols-2 ${steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-5"}`}>
         {steps.map((s, i) => (
           <li key={s.title} className="bg-card p-6">
             <Reveal delay={i * 80}>
