@@ -7,7 +7,6 @@ import { CONTACT, SERVICES, TRACKS, type Track } from "@/lib/site";
 const NAV = [
   { to: "/products/leave-management", label: "Products" },
   { to: "/portfolio", label: "Portfolio" },
-  { to: "/pricing", label: "Pricing" },
   { to: "/about", label: "About" },
 ] as const;
 
@@ -164,7 +163,6 @@ export function Footer() {
           </address>
           <nav aria-label="Footer" className="mt-6 flex flex-wrap gap-x-4 gap-y-2 text-sm">
             <Link to="/portfolio" className="hover:text-accent">Portfolio</Link>
-            <Link to="/pricing" className="hover:text-accent">Pricing</Link>
             <Link to="/about" className="hover:text-accent">About</Link>
             <Link to="/contact" className="hover:text-accent">Contact</Link>
           </nav>

@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProductsLeaveManagementRouteImport } from './routes/products.leave-management'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
@@ -38,11 +37,6 @@ const PortfolioRoute = PortfolioRouteImport.update({
   path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProductsLeaveManagementRoute = ProductsLeaveManagementRouteImport.update({
   id: '/products/leave-management',
   path: '/products/leave-management',
@@ -64,7 +58,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
-  '/pricing': typeof PricingRoute
   '/products/leave-management': typeof ProductsLeaveManagementRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
@@ -74,7 +67,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
-  '/pricing': typeof PricingRoute
   '/products/leave-management': typeof ProductsLeaveManagementRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services': typeof ServicesIndexRoute
@@ -85,7 +77,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
-  '/pricing': typeof PricingRoute
   '/products/leave-management': typeof ProductsLeaveManagementRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/services/': typeof ServicesIndexRoute
@@ -97,7 +88,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/portfolio'
-    | '/pricing'
     | '/products/leave-management'
     | '/services/$slug'
     | '/services/'
@@ -107,7 +97,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/portfolio'
-    | '/pricing'
     | '/products/leave-management'
     | '/services/$slug'
     | '/services'
@@ -117,7 +106,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/portfolio'
-    | '/pricing'
     | '/products/leave-management'
     | '/services/$slug'
     | '/services/'
@@ -128,7 +116,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRoute
-  PricingRoute: typeof PricingRoute
   ProductsLeaveManagementRoute: typeof ProductsLeaveManagementRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -164,13 +151,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/products/leave-management': {
       id: '/products/leave-management'
       path: '/products/leave-management'
@@ -200,7 +180,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRoute,
-  PricingRoute: PricingRoute,
   ProductsLeaveManagementRoute: ProductsLeaveManagementRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   ServicesIndexRoute: ServicesIndexRoute,
