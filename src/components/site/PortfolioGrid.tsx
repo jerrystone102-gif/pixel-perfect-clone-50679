@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { CATEGORY_LABEL, type PortfolioItem } from "@/lib/portfolio";
 
-export function PortfolioGrid({ items, initialId }: { items: PortfolioItem[]; initialId?: string }) {
+export function PortfolioGrid({ items, initialId }: { items: PortfolioItem[]; initialId?: string | undefined }) {
   const [open, setOpen] = useState<number | null>(null);
   useEffect(() => {
     if (!initialId) return;

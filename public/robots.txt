@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://pixel-perfect-clone-50679.lovable.app/sitemap.xml
