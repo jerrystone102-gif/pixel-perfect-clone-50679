@@ -19,16 +19,16 @@ export const Route = createFileRoute("/about")({
 });
 
 const WHO = [
-  { title: "Small business owners", body: "Who need their books kept accurate and want to understand their numbers without becoming accountants." },
-  { title: "Growing teams", body: "Who have outgrown spreadsheets and email threads and need proper systems and reporting." },
-  { title: "Operations & finance leads", body: "Who want dashboards, automation and tools that save their team time every week." },
+  { title: "Small business owners", body: "Who need their books kept accurate and want to understand their numbers without having to become an accountant themselves." },
+  { title: "Growing teams", body: "Who have outgrown spreadsheets and email chains and need a proper system before things start slipping." },
+  { title: "Operations & finance leads", body: "Who want dashboards and automation that give their team real hours back every week." },
 ];
 
 const PRINCIPLES = [
-  { title: "Start with the problem", body: "We don't sell tools first. We learn what's slowing you down, then choose the simplest fix." },
-  { title: "Plain language", body: "No jargon. You'll always know what we're doing, why, and what it costs." },
-  { title: "Clear scope and price", body: "Written scope, timeline and price agreed before any work begins." },
-  { title: "Built to be used", body: "We hand over with training and stay available, so what we build actually gets used." },
+  { title: "Start with the problem", body: "We start with the problem, not the tool. We learn what's actually slowing you down before we suggest a fix for it." },
+  { title: "Plain language", body: "You'll know what we're doing, why we're doing it, and what it costs, at every stage." },
+  { title: "Clear scope and price", body: "Scope and price are agreed in writing before anything starts, so there's never a surprise bill." },
+  { title: "Built to be used", body: "We build things to actually get used. That means training, a proper handover, and staying reachable after launch." },
 ];
 
 const STEPS = [
@@ -45,7 +45,7 @@ function Page() {
       <PageHero
         eyebrow="About us"
         title="One team for your finance, data and technology."
-        lead="Nedd Digital helps businesses keep accurate books, understand their numbers and run on tools that fit how they actually work."
+        lead="Nedd Digital keeps your books accurate, turns your numbers into something you can actually read, and builds the tools your business runs on. Most of our clients come to us because they tried doing these things separately and it kept falling through the cracks between providers."
       >
         <PrimaryLink to="/contact">Talk to us</PrimaryLink>
       </PageHero>
@@ -56,8 +56,8 @@ function Page() {
           <h2 className="text-3xl font-semibold text-navy md:text-4xl">Practical help, not buzzwords.</h2>
         </div>
         <div className="space-y-5 text-lg text-muted-foreground">
-          <p>Nedd Digital is a Jersey City–based business and technology partner. We work across two areas: keeping your finances clear, and building the digital tools your business depends on.</p>
-          <p>Most businesses don't need more software — they need their existing data to be accurate, their reports to answer real questions, and their daily work to take less effort. That's what we focus on.</p>
+          <p>Nedd Digital works across two areas that are usually kept apart: keeping your finances clear, and building the digital tools your business depends on. We think that split is a mistake. The person who understands your numbers should be talking to the person building your systems, because the two are almost always connected.</p>
+          <p>Most of the businesses we work with don't need more software. They need their existing numbers to be right, their reports to answer the question they actually asked, and their day to day work to take less effort than it currently does. That's the whole job, really.</p>
         </div>
       </section>
 
