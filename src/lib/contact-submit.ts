@@ -18,9 +18,9 @@ export async function submitEnquiry(v: Enquiry) {
     createdAt: serverTimestamp(),
   });
 
-  const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID as string | undefined;
-  const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string | undefined;
-  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string | undefined;
+  const serviceId = import.meta.env['VITE_EMAILJS_SERVICE_ID'] as string | undefined;
+  const templateId = import.meta.env['VITE_EMAILJS_TEMPLATE_ID'] as string | undefined;
+  const publicKey = import.meta.env['VITE_EMAILJS_PUBLIC_KEY'] as string | undefined;
   if (serviceId && templateId && publicKey) {
     try {
       await emailjs.send(serviceId, templateId, { ...v, company: v.company || "-" }, { publicKey });
