@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { PageHero, Eyebrow } from "@/components/site/Blocks";
 import { CONTACT, SERVICES } from "@/lib/site";
+import { backendReady, submitEnquiry } from "@/lib/contact-submit";
 
 const DESC = "Contact Nedd Digital about bookkeeping, Power BI and Tableau dashboards, automation, websites, software, apps or branding. Call +1 (281) 547-9290.";
 
@@ -37,8 +38,10 @@ const field = "mt-2 w-full rounded-xl border bg-card px-4 py-3 text-foreground o
 function Page() {
   const [errors, setErrors] = useState<Errors>({});
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [failed, setFailed] = useState(false);
 
-  function submit(e: FormEvent<HTMLFormElement>) {
+  async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>;
     const r = schema.safeParse(data);
@@ -51,9 +54,25 @@ function Page() {
     }
     setErrors({});
     const v = r.data;
-    const body = `Name: ${v.name}\nEmail: ${v.email}\nCompany: ${v.company || "-"}\nService: ${v.service}\n\n${v.message}`;
-    window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(`Enquiry: ${v.service}`)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    const form = e.currentTarget;
+    if (!backendReady) {
+      const body = `Name: ${v.name}\nEmail: ${v.email}\nCompany: ${v.company || "-"}\nService: ${v.service}\n\n${v.message}`;
+      window.location.href = `mailto:${CONTACT.email}?subject=${encodeURIComponent(`Enquiry: ${v.service}`)}&body=${encodeURIComponent(body)}`;
+      setSent(true);
+      return;
+    }
+    setSending(true);
+    setFailed(false);
+    try {
+      await submitEnquiry(v);
+      form.reset();
+      setSent(true);
+    } catch (err) {
+      console.error(err);
+      setFailed(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   const err = (k: keyof Errors) =>
@@ -110,11 +129,15 @@ function Page() {
               {err("message")}
             </div>
           </div>
-          <button type="submit" className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
-            Let's discuss your project <Send className="h-4 w-4" />
+          <button type="submit" disabled={sending} className="mt-6 inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            {sending ? "Sending…" : "Let's discuss your project"} <Send className="h-4 w-4" />
           </button>
           <p role="status" className="mt-4 text-sm text-muted-foreground">
-            {sent ? `Your email app should now open with your message. If it didn't, email us at ${CONTACT.email}.` : "Sending opens your email app with your message ready to go."}
+            {failed
+              ? `Sorry, that didn't go through. Please try again or email us at ${CONTACT.email}.`
+              : sent
+                ? "Thanks, that's been sent through. We'll get back to you within 24 hours."
+                : "We'll reply within 24 hours."}
           </p>
         </form>
       </section>
