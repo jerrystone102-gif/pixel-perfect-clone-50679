@@ -19,7 +19,7 @@ export const Route = createFileRoute("/portfolio")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  validateSearch: (s: Record<string, unknown>): { item?: string } => (typeof s.item === "string" ? { item: s.item } : {}),
+  validateSearch: (s: Record<string, unknown>): { item?: string } => (typeof s["item"] === "string" ? { item: s["item"] } : {}),
   component: Page,
 });
 
