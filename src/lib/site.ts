@@ -48,19 +48,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Bookkeeping & QuickBooks Services | Nedd Digital",
     metaDescription:
       "Monthly QuickBooks bookkeeping, reconciliation, AR/AP, job costing, cleanup and migration for small and growing businesses.",
-    heroTitle: "Books you can trust, every month.",
-    heroLead:
-      "We handle your day-to-day QuickBooks bookkeeping so your records stay accurate, organized and ready for decisions, tax time and lenders.",
-    problemTitle: "When the books fall behind, everything gets harder.",
-    problems: [
-      "Accounts haven't been reconciled in months, so nobody is sure what the real bank balance is.",
-      "Transactions land in the wrong categories, so the P&L doesn't show where money actually goes.",
-      "Unpaid invoices pile up and cash gets tight even though revenue looks fine on paper.",
-      "Tax season turns into a scramble to find duplicates and missing expenses.",
-    ],
-    solution:
-      "We keep your QuickBooks file current: every transaction recorded and categorized, every account reconciled, and a proper month-end close so the numbers are final and dependable.",
-    offerings: [
+    heroTitle: "Books you can actually trust, every single month.",
+    heroLead: "We handle the day to day QuickBooks work so your numbers stay accurate, your accounts stay reconciled, and you're never the one scrambling to explain a gap at tax time.",
+    problemTitle: "What usually goes wrong before we start",
+    problems: ["Nobody has reconciled the accounts in months, so the real bank balance is a guess.", "Transactions get dumped into the wrong category, so the P&L doesn't actually show where the money went.", "Invoices pile up unpaid and cash gets tight even though revenue looks fine on paper.", "Tax season turns into a scramble through receipts and missing expenses that should have been filed as they happened."],
+    solution: "We take over the file, clean up what's behind, and then keep it current every month. Every transaction gets recorded and categorized properly. Every account gets reconciled against the actual bank and card statements, which is how we catch duplicate charges and mistakes before they become a bigger problem. At month end, we close the books properly and hand you a P&L and balance sheet you can actually rely on. If your books are months behind right now, that's fine: cleanup is something we do before ongoing monthly work starts, not a separate crisis to deal with later.",
+        offerings: [
       {
         title: "Transaction entry & categorization",
         body: "Every time money moves in or out of your business, we record it in QuickBooks and assign it to the correct account.",
@@ -124,18 +117,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Power BI & Tableau Dashboards, Data Analytics | Nedd Digital",
     metaDescription:
       "Power BI and Tableau dashboards for cash flow, P&L, AR aging and KPIs, built from QuickBooks, Excel and SQL data.",
-    heroTitle: "Turn business data into dashboards your team can actually use.",
-    heroLead:
-      "Whether your business works with Power BI, Tableau, Excel, QuickBooks or SQL data, we help turn disconnected information into clear, interactive reports.",
-    problemTitle: "Reports exist. Answers don't.",
-    problems: [
-      "Monthly reports arrive as spreadsheets that take an hour to read and still don't answer the question.",
-      "Cash flow surprises happen because nobody can see money coming in and going out side by side.",
-      "Data sits in separate places (QuickBooks, Excel files, other systems) and never comes together.",
-    ],
-    solution:
-      "We connect your data sources and build focused Power BI or Tableau dashboards around the decisions you make, so you can filter, drill in and compare periods yourself.",
-    offerings: [
+    heroTitle: "Turn the data you already have into answers, not more spreadsheets.",
+    heroLead: "Whether your numbers live in QuickBooks, Excel, SQL or somewhere else entirely, we build Power BI or Tableau dashboards around the actual decisions you need to make, not a generic template full of charts nobody asked for.",
+    problemTitle: "The problem isn't a lack of reports",
+    problems: ["A monthly report lands in your inbox as a spreadsheet, and it takes an hour to read and still doesn't answer the question you had.", "Cash flow surprises happen because nobody can see money coming in and going out side by side, in one place.", "Your data lives in three different systems and never actually talks to each other."],
+    solution: "We start by figuring out what you actually need to know, then connect the data sources behind it. The dashboard gets built around that question, with filters and drill downs so you can explore it yourself instead of requesting a new version every time something changes. You get a walkthrough at the end so your team actually uses it, instead of it sitting there unopened. If your data is scattered across QuickBooks, Excel files and a database that nobody fully understands anymore, that's a normal starting point, not a blocker.",
+        offerings: [
       { title: "Cash flow dashboards", body: "Money in and money out over time, so you can spot tight months before they arrive." },
       { title: "P&L dashboards", body: "Revenue, expenses and margin by month, category or department, with period comparisons." },
       { title: "AR aging", body: "Who owes you, how much and how long it's been outstanding." },
@@ -176,18 +163,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Business Automation & Workflow Services | Nedd Digital",
     metaDescription:
       "Practical business automation: connect your systems, move data automatically, automate reporting and reduce repetitive manual work.",
-    heroTitle: "Stop doing the same task by hand every week.",
-    heroLead:
-      "We find the repetitive work in your operations and automate it: moving data between systems, producing routine reports and running approval steps.",
-    problemTitle: "Hours lost to copy, paste and chase.",
-    problems: [
-      "Someone exports data from one system and re-types it into another.",
-      "The same weekly report is rebuilt manually every time.",
-      "Requests and approvals live in email threads and get lost.",
-    ],
-    solution:
-      "We map the workflow as it runs today, then connect the systems and automate the repeatable steps, keeping people in the loop where judgement is needed.",
-    offerings: [
+    heroTitle: "Stop doing the same task by hand every single week.",
+    heroLead: "We look at your operations, find the repetitive work, and automate it: moving data between systems, producing the reports that get rebuilt manually every month, and running approval steps that currently live in someone's inbox.",
+    problemTitle: "Where the hours are quietly disappearing",
+    problems: ["Someone exports a report from one system and retypes the same numbers into another.", "The same weekly report gets rebuilt from scratch every time, by hand.", "Requests and approvals live in email threads and regularly get lost or forgotten."],
+    solution: "We map how the workflow actually runs today, not how it's supposed to run on paper, then connect the systems and automate the steps that don't need a human making a judgment call. The parts that do need a person stay with a person. You get documentation of what runs, when, and why, so it's not a black box only we understand. Most automation projects pay for themselves in the hours they give back within the first couple of months.",
+        offerings: [
       { title: "Connecting business systems", body: "Link the tools you already use so data flows between them without re-entry." },
       { title: "Automated data movement", body: "Scheduled transfers and clean-up of data between apps, spreadsheets and databases." },
       { title: "Reporting workflows", body: "Routine reports produced and delivered automatically." },
@@ -216,18 +197,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Website Design & Development | Nedd Digital",
     metaDescription:
       "Business websites and landing pages: modern design, responsive development, working forms and deployment support.",
-    heroTitle: "A website that explains your business in seconds.",
-    heroLead:
-      "We design and build business websites and landing pages that load fast, work on every screen and make it easy for visitors to contact you.",
-    problemTitle: "Your website should be working for you.",
-    problems: [
-      "The current site looks dated and doesn't reflect the quality of your work.",
-      "It's hard to use on a phone, where most visitors arrive.",
-      "Visitors can't tell quickly what you offer or how to get in touch.",
-    ],
-    solution:
-      "We start with the problem your customers have, structure the site around it, then design and build a clean, responsive site with the functionality you need.",
-    offerings: [
+    heroTitle: "Software shaped around your process, not the other way around.",
+    heroLead: "When spreadsheets and off the shelf tools stop fitting, we build internal systems and web applications around how your business actually runs, not how a generic tool assumes every business runs.",
+    problemTitle: "Where off the shelf tools stop being enough",
+    problems: ["A key process is held together with a patchwork of spreadsheets and email.", "Generic software forces your team into workarounds just to get normal work done.", "Managers can't see the real status of anything without asking around and waiting for an answer."],
+    solution: "We start with the actual problem, map how the process really works, and build a focused application around the roles, workflows and views your team needs. Nothing extra, nothing missing. You test it as it's being built, not just at the very end. The goal is one place where the work actually lives, instead of three tools and a group chat trying to hold it together.",
+            offerings: [
       { title: "Website design", body: "A modern interface with clear hierarchy that fits your brand." },
       { title: "Responsive development", body: "Built to work properly on phones, tablets and desktops." },
       { title: "Business websites & landing pages", body: "Multi-page company sites or focused pages for a single offer." },
@@ -298,18 +273,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Mobile App Development | Nedd Digital",
     metaDescription:
       "Mobile app development based on your business requirements: UI/UX design, app development, backend integration, testing and deployment.",
-    heroTitle: "Put your service in your customers' pocket.",
-    heroLead:
-      "We build mobile applications around clear business requirements, covering design, development, integration with your systems, testing and release.",
-    problemTitle: "A good idea needs a clear build plan.",
-    problems: [
-      "You know what the app should do but not how to scope it.",
-      "The app needs to talk to existing systems and data.",
-      "Past attempts stalled without a clear process.",
-    ],
-    solution:
-      "We define the requirements with you, design the screens, then develop, integrate and test the app before release.",
-    offerings: [
+    heroTitle: "Put your service in your customers' pocket, built around a plan that actually holds up.",
+    heroLead: "We build mobile applications from clear requirements, covering design, development, integration with your existing systems, testing and release, so the app does what it's supposed to from day one.",
+    problemTitle: "What usually stalls a mobile app before it starts",
+    problems: ["You know roughly what the app should do, but turning that into a scope is the hard part.", "The app needs to talk to systems and data you already have, and that connection has to work properly.", "A past attempt stalled out because there was never a clear process to follow."],
+    solution: "We define the requirements with you first, design the actual screens, then build, connect it to your systems, and test it properly before release. You know what's being built and roughly when at every stage, not just at the end. Support doesn't stop at launch. Early feedback from real users usually means a few adjustments, and we're there for that.",
+        offerings: [
       { title: "UI/UX design", body: "Screen flows and interface designed for how people will use the app." },
       { title: "Mobile application development", body: "The app built to your agreed requirements." },
       { title: "API & backend integration", body: "Connections to your existing systems and data." },
@@ -333,18 +302,12 @@ export const SERVICES: Service[] = [
     metaTitle: "Logo & Brand Design | Nedd Digital",
     metaDescription:
       "Logo design, brand identity, visual direction and business branding assets for small and growing businesses.",
-    heroTitle: "Look as professional as the work you do.",
-    heroLead:
-      "We design logos and simple, consistent brand identities so your business looks the same everywhere: website, documents, social and signage.",
-    problemTitle: "Inconsistent branding costs trust.",
-    problems: [
-      "The logo was made quickly and no longer fits the business.",
-      "Colors and fonts change from one document to the next.",
-      "There are no ready files for print, web and social.",
-    ],
-    solution:
-      "We agree a visual direction, design the logo and core identity, then deliver the files and guidance you need to use it consistently.",
-    offerings: [
+    heroTitle: "Look as professional as the work you're actually doing.",
+    heroLead: "We design logos and simple, consistent brand identities so your business looks like the same business everywhere it shows up: your website, your documents, social media and signage.",
+    problemTitle: "What inconsistent branding actually costs you",
+    problems: ["The logo was put together quickly years ago and no longer fits the business you've grown into.", "Colors and fonts shift from one document to the next, so nothing feels connected.", "There are no proper files ready for print, web and social, so every new need turns into a scramble."],
+    solution: "We agree on a visual direction first, design the logo and the core identity around it, then hand over the files and a short, clear guide so your team can use it consistently without having to ask each time. The result is a business that looks like one business, wherever a customer runs into it.",
+        offerings: [
       { title: "Logo design", body: "A distinctive mark in the formats you need." },
       { title: "Brand identity", body: "Color palette, typography and usage rules." },
       { title: "Visual direction", body: "A clear look and feel agreed before design starts." },
@@ -367,22 +330,22 @@ export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug
 export const TRACKS: Record<Track, { name: string; lead: string }> = {
   finance: {
     name: "Business, Finance & Insights",
-    lead: "Accurate books, clear reporting and less manual work.",
+    lead: "Books that are reconciled every month, dashboards that show what's actually happening, and fewer hours spent chasing numbers that should already be there.",
   },
   digital: {
     name: "Digital & Technology",
-    lead: "Websites, software, apps and branding built around your business.",
+    lead: "Websites, internal tools, apps and branding built around how your business runs day to day, not a template that almost fits.",
   },
 };
 
 export const LEAVE_FEATURES = [
-  { title: "Employee, manager & admin roles", body: "Each role sees the views and actions that match their responsibilities." },
-  { title: "Leave requests & approvals", body: "Employees submit requests; managers approve or decline with a clear trail." },
-  { title: "Live leave balances", body: "Balances update as requests are approved, so everyone sees the same numbers." },
-  { title: "Leave types & policies", body: "Configure leave types and the policies that govern them." },
-  { title: "CSV import", body: "Bring existing employee data in without re-typing it." },
-  { title: "Attachments", body: "Supporting documents attached directly to requests." },
-  { title: "Notifications", body: "People are told when a request needs action or has been decided." },
-  { title: "Reports", body: "Overview and reporting views for managers and admins." },
-  { title: "Audit logs", body: "A record of who did what and when." },
+  { title: "Employee, manager & admin roles", body: "Separate views for employees, managers and admins, each seeing only what's relevant to their role." },
+  { title: "Leave requests & approvals", body: "Leave requests and approvals with a clear, auditable trail behind every decision." },
+  { title: "Live leave balances", body: "Leave balances that update live as requests are approved." },
+  { title: "Leave types & policies", body: "Configurable leave types and the policies behind them." },
+  { title: "CSV import", body: "CSV import, so existing employee data doesn't need to be retyped." },
+  { title: "Attachments", body: "Supporting documents attached directly to a request." },
+  { title: "Notifications", body: "Notifications when a request needs action or has just been decided." },
+  { title: "Reports", body: "Reporting views for managers and admins." },
+  { title: "Audit logs", body: "An audit log of who did what and when." },
 ];

@@ -19,10 +19,12 @@ export const Route = createFileRoute("/portfolio")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  validateSearch: (s: Record<string, unknown>): { item?: string } => (typeof s.item === "string" ? { item: s.item } : {}),
   component: Page,
 });
 
 function Page() {
+  const { item } = Route.useSearch();
   const [cat, setCat] = useState<"all" | PortfolioCategory>("all");
   const list = PORTFOLIO.filter((p) => cat === "all" || p.category === cat);
   const count = (id: string) => (id === "all" ? PORTFOLIO.length : PORTFOLIO.filter((p) => p.category === id).length);
@@ -55,7 +57,7 @@ function Page() {
         </div>
 
         <div className="mt-10">
-          <PortfolioGrid key={cat} items={list} />
+          <PortfolioGrid key={cat} items={list} initialId={cat === "all" ? item : undefined} />
         </div>
       </section>
 

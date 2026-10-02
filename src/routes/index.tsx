@@ -21,16 +21,16 @@ export const Route = createFileRoute("/")({
 });
 
 const STEPS = [
-  { title: "Understand", body: "We learn how your business runs and what you need." },
-  { title: "Plan", body: "Clear scope, timeline and price up front." },
-  { title: "Build", body: "Work delivered in visible stages." },
-  { title: "Refine", body: "You review, we adjust, then hand over with support." },
+  { title: "Understand", body: "We spend real time learning how your business runs before suggesting anything." },
+  { title: "Plan", body: "A scope, timeline and price, agreed in writing before work starts." },
+  { title: "Build", body: "Work delivered in stages you can actually see, not one big reveal at the end." },
+  { title: "Refine", body: "You review it, we adjust it, then we hand it over with support attached." },
 ];
 
 const WHY = [
-  { title: "Finance and tech together", body: "Bookkeeping, Power BI and Tableau dashboards, automation and software from one team, so nothing gets lost between providers." },
-  { title: "Clear quotes", body: "A written quote and scope before any work starts, so you always know what you are paying for." },
-  { title: "Plain communication", body: "Simple explanations, regular updates and a single point of contact." },
+  { title: "Finance and tech together", body: "Your bookkeeper and your developer are the same team, so nothing gets lost explaining your business twice to two different providers." },
+  { title: "A price before we start", body: "You get a written quote and scope before any work begins, so there's no surprise invoice halfway through." },
+  { title: "One person to call", body: "A single point of contact who already knows your setup, instead of a new rep every time you reach out." },
 ];
 
 const PREVIEW = (["websites", "webdev", "mobile", "branding"] as const)
@@ -64,9 +64,9 @@ function Index() {
   return (
     <>
       <PageHero
-        eyebrow="Finance · Data · Technology"
-        title="From messy books to clear insights and working software."
-        lead="Nedd Digital keeps your QuickBooks accurate, turns your numbers into Power BI dashboards, and builds the websites, apps and systems your business runs on."
+        eyebrow="Finance, Data, Technology"
+        title="Your books handled properly, your numbers finally making sense, and software that fits how you actually work."
+        lead="Most businesses don't lose money because they're doing something wrong. They lose it because nobody has time to keep the books current, the reports don't answer the real questions, and the tools were never built for how the team actually works. Nedd Digital fixes all three, under one roof."
       >
         <PrimaryLink to="/contact">Book a free consultation</PrimaryLink>
         <GhostLink to="/services">Explore services</GhostLink>
@@ -86,7 +86,7 @@ function Index() {
           <div>
             <Eyebrow>Power BI</Eyebrow>
             <h2 className="text-3xl font-semibold text-navy md:text-4xl">Your numbers, at a glance.</h2>
-            <p className="mt-4 text-muted-foreground">Every bookkeeping package includes a free historical Power BI dashboard covering up to three years of your data.</p>
+            <p className="mt-4 text-muted-foreground">Most business owners can tell you what their revenue was last month. Fewer can tell you which three customers are carrying the business, or how long cash actually lasts if a slow month hits. That's the gap a proper dashboard closes. Every bookkeeping package includes a free historical Power BI dashboard covering up to three years of your data, so you start seeing the picture from day one, not six months in.</p>
             <div className="mt-8"><PrimaryLink to="/services/$slug" params={{ slug: "power-bi-data-analytics" }}>See dashboards</PrimaryLink></div>
           </div>
           <DemoDashboard compact />
@@ -98,7 +98,7 @@ function Index() {
           <div>
             <Eyebrow>Our product</Eyebrow>
             <h2 className="text-3xl font-semibold text-navy md:text-4xl">Leave Management Software</h2>
-            <p className="mt-4 text-muted-foreground">Requests, approvals and live leave balances for employees, managers and admins — in one place.</p>
+            <p className="mt-4 text-muted-foreground">Built because we needed it ourselves first. Employees request time off, managers approve it, and everyone can see real leave balances without a spreadsheet getting passed around by email. Requests, approvals and live balances for employees, managers and admins, all in one place.</p>
             <div className="mt-8"><PrimaryLink to="/products/leave-management">View the product</PrimaryLink></div>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
@@ -136,7 +136,7 @@ function Index() {
         </div>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PREVIEW.map((p) => (
-            <Link key={p.id} to="/portfolio" className="group overflow-hidden rounded-2xl border bg-card">
+            <Link key={p.id} to="/portfolio" search={{ item: p.id }} className="group overflow-hidden rounded-2xl border bg-card">
               <div className="aspect-[4/3] overflow-hidden bg-muted">
                 <img src={p.cover} alt={p.alt} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
               </div>
@@ -147,7 +147,7 @@ function Index() {
       </section>
 
       <ProcessSteps steps={STEPS} />
-      <CtaBand title="Let's talk about your business" body="Tell us what you need and we'll reply within 24 hours with clear next steps." cta="Contact us" />
+      <CtaBand title="Let's talk about your business." body="Tell us what's slowing you down and we'll reply within 24 hours with clear next steps, not a sales pitch." cta="Contact us" />
     </>
   );
 }

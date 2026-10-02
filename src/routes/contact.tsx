@@ -62,7 +62,7 @@ function Page() {
 
   return (
     <>
-      <PageHero eyebrow="Contact" title="Let's discuss your project." lead="Tell us a little about your business and what you need. We'll reply with clear next steps." />
+      <PageHero eyebrow="Contact" title="Let's discuss your project." lead="Tell us a little about your business and what's not working right now. We'll reply with clear next steps, not a generic sales email." />
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 lg:grid-cols-5 lg:px-8 md:py-20">
         <aside className="lg:col-span-2">
           <Eyebrow>Get in touch</Eyebrow>

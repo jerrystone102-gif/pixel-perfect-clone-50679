@@ -2,8 +2,13 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { CATEGORY_LABEL, type PortfolioItem } from "@/lib/portfolio";
 
-export function PortfolioGrid({ items }: { items: PortfolioItem[] }) {
+export function PortfolioGrid({ items, initialId }: { items: PortfolioItem[]; initialId?: string }) {
   const [open, setOpen] = useState<number | null>(null);
+  useEffect(() => {
+    if (!initialId) return;
+    const i = items.findIndex((p) => p.id === initialId);
+    if (i >= 0) setOpen(i);
+  }, [initialId, items]);
   return (
     <>
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
