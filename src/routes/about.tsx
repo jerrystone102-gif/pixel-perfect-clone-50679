@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { PageHero, CtaBand, Eyebrow, ProcessSteps, PrimaryLink } from "@/components/site/Blocks";
 import { Reveal } from "@/components/site/Reveal";
-import { CONTACT, TRACKS } from "@/lib/site";
+import { CONTACT, SERVICES } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -64,18 +64,13 @@ function Page() {
       <section className="bg-muted/50">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
           <Eyebrow>What we do</Eyebrow>
-          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Two areas, clearly separated.</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {(["finance", "digital"] as const).map((t, i) => (
-              <Reveal key={t} delay={i * 100}>
-                <div className="h-full rounded-2xl border bg-card p-8">
-                  <h3 className="text-xl font-semibold text-navy">{TRACKS[t].name}</h3>
-                  <p className="mt-2 text-muted-foreground">{TRACKS[t].lead}</p>
-                  <p className="mt-4 text-sm text-muted-foreground">
-                    {t === "finance"
-                      ? "QuickBooks bookkeeping, cleanup and migration, Power BI dashboards and business automation."
-                      : "Websites, custom software, mobile apps, logo and brand design, plus our own Leave Management Software."}
-                  </p>
+          <h2 className="text-3xl font-semibold text-navy md:text-4xl">Practical services for the work that matters.</h2>
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {SERVICES.map((service, i) => (
+              <Reveal key={service.slug} delay={i * 60}>
+                <div className="h-full border-t-2 border-accent pt-5">
+                  <h3 className="text-lg font-semibold text-navy">{service.name}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{service.short}</p>
                 </div>
               </Reveal>
             ))}
