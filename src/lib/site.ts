@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
       {
         title: "Transaction entry & categorization",
         body: "Every time money moves in or out of your business, we record it in QuickBooks and assign it to the correct account.",
-        example: "A $1,200 insurance payment is recorded as Insurance Expense, not just 'Payment', so at year-end you know exactly what you spent on insurance versus rent or supplies.",
+        example: "A $1,200 insurance payment is recorded as Insurance Expense, not just 'Payment', so at year end you know exactly what you spent on insurance versus rent or supplies.",
       },
       {
         title: "Bank & credit card reconciliation",
@@ -82,11 +82,11 @@ export const SERVICES: Service[] = [
     ],
     deliverables: [
       "QuickBooks setup with proper chart of accounts and opening balances",
-      "QuickBooks cleanup of messy or out-of-date files",
+      "QuickBooks cleanup of messy or outdated files",
       "Migration from QuickBooks Desktop to Online, or from Xero, Wave or FreshBooks",
       "Inventory and cost of goods sold tracking",
       "Job and project costing",
-      "Multi-entity management for related companies",
+      "Management of multiple related companies",
       "Monthly P&L and Balance Sheet",
     ],
     outcomes: [
@@ -98,7 +98,7 @@ export const SERVICES: Service[] = [
       { title: "Review", body: "We look at your current QuickBooks file (or set one up) and agree what needs doing." },
       { title: "Clean up", body: "If the books are behind or messy, we bring them current first." },
       { title: "Monthly bookkeeping", body: "Ongoing entry, categorization and reconciliation throughout the month." },
-      { title: "Close & report", body: "Month-end close with your P&L and Balance Sheet delivered." },
+      { title: "Close & report", body: "Monthly close with your P&L and Balance Sheet delivered." },
     ],
     faqs: [
       { q: "Do you prepare tax returns?", a: "No. We keep your books accurate and closed so your CPA or tax preparer can work from clean numbers." },
@@ -133,8 +133,8 @@ export const SERVICES: Service[] = [
     deliverables: [
       "Connections to QuickBooks, Excel, SQL and other business data",
       "Data model built for your reporting questions",
-      "Interactive Power BI or Tableau reports with filters and drill-downs",
-      "Before/after and period-over-period comparisons",
+      "Interactive Power BI or Tableau reports with filters and detailed views",
+      "Before and after comparisons across reporting periods",
       "Walkthrough so your team can use the dashboards confidently",
     ],
     outcomes: [
@@ -169,10 +169,10 @@ export const SERVICES: Service[] = [
     problems: ["Someone exports a report from one system and retypes the same numbers into another.", "The same weekly report gets rebuilt from scratch every time, by hand.", "Requests and approvals live in email threads and regularly get lost or forgotten."],
     solution: "We map how the workflow actually runs today, not how it's supposed to run on paper, then connect the systems and automate the steps that don't need a human making a judgment call. The parts that do need a person stay with a person. You get documentation of what runs, when, and why, so it's not a black box only we understand. Most automation projects pay for themselves in the hours they give back within the first couple of months.",
         offerings: [
-      { title: "Connecting business systems", body: "Link the tools you already use so data flows between them without re-entry." },
-      { title: "Automated data movement", body: "Scheduled transfers and clean-up of data between apps, spreadsheets and databases." },
+      { title: "Connecting business systems", body: "Link the tools you already use so data flows between them without entering it again." },
+      { title: "Automated data movement", body: "Scheduled transfers and cleanup of data between apps, spreadsheets and databases." },
       { title: "Reporting workflows", body: "Routine reports produced and delivered automatically." },
-      { title: "Operational processes", body: "Requests, approvals and hand-offs turned into a defined, trackable workflow." },
+      { title: "Operational processes", body: "Requests, approvals and transfers turned into a defined, trackable workflow." },
     ],
     deliverables: [
       "Map of the current workflow and where time is lost",
@@ -182,7 +182,7 @@ export const SERVICES: Service[] = [
     ],
     outcomes: [
       { title: "Time back", body: "Repetitive tasks handled without someone doing them manually." },
-      { title: "Fewer errors", body: "Less re-typing means fewer mistakes between systems." },
+      { title: "Fewer errors", body: "Entering data once means fewer mistakes between systems." },
       { title: "Clear status", body: "Everyone can see where a request or task stands." },
     ],
     process: standardProcess,
@@ -197,15 +197,15 @@ export const SERVICES: Service[] = [
     metaTitle: "Website Design & Development | Nedd Digital",
     metaDescription:
       "Business websites and landing pages: modern design, responsive development, working forms and deployment support.",
-    heroTitle: "Software shaped around your process, not the other way around.",
-    heroLead: "When spreadsheets and off the shelf tools stop fitting, we build internal systems and web applications around how your business actually runs, not how a generic tool assumes every business runs.",
-    problemTitle: "Where off the shelf tools stop being enough",
-    problems: ["A key process is held together with a patchwork of spreadsheets and email.", "Generic software forces your team into workarounds just to get normal work done.", "Managers can't see the real status of anything without asking around and waiting for an answer."],
-    solution: "We start with the actual problem, map how the process really works, and build a focused application around the roles, workflows and views your team needs. Nothing extra, nothing missing. You test it as it's being built, not just at the very end. The goal is one place where the work actually lives, instead of three tools and a group chat trying to hold it together.",
+    heroTitle: "A website that tells people what you do before they have to ask.",
+    heroLead: "We design and build business websites and landing pages that load fast, work properly on a phone, and make it obvious how to get in touch, because that's usually the entire job a website needs to do.",
+    problemTitle: "Why the current site isn't pulling its weight",
+    problems: ["It looks dated and doesn't reflect the quality of the actual work you do.", "It's hard to use on a phone, which is where most visitors actually arrive from.", "A new visitor can't tell within a few seconds what you offer or how to reach you."],
+    solution: "We start with the problem your customers actually have, not a template, and structure the site around getting them to the answer quickly. From there we design and build something clean and responsive, with the forms, booking links or content sections you actually need, and nothing you don't. A site built this way keeps working for you long after launch, because new pages and sections can be added without starting over.",
             offerings: [
       { title: "Website design", body: "A modern interface with clear hierarchy that fits your brand." },
       { title: "Responsive development", body: "Built to work properly on phones, tablets and desktops." },
-      { title: "Business websites & landing pages", body: "Multi-page company sites or focused pages for a single offer." },
+      { title: "Business websites & landing pages", body: "Company websites with several pages or focused pages for a single offer." },
       { title: "Website functionality", body: "Contact forms, booking links, content sections and integrations." },
     ],
     deliverables: [
@@ -234,8 +234,8 @@ export const SERVICES: Service[] = [
       "Custom business software: internal systems, workflow tools, dashboards and web applications designed around your processes.",
     heroTitle: "Software shaped around your process, not the other way round.",
     heroLead:
-      "When spreadsheets and off-the-shelf tools stop fitting, we build internal systems and web applications around how your business actually runs.",
-    problemTitle: "Off-the-shelf tools only go so far.",
+      "When spreadsheets and standard tools stop fitting, we build internal systems and web applications around how your business actually runs, not how a generic tool assumes every business runs.",
+    problemTitle: "Where standard tools stop being enough",
     problems: [
       "Key processes run on a patchwork of spreadsheets and email.",
       "Generic software forces workarounds for the way your team works.",
@@ -247,7 +247,7 @@ export const SERVICES: Service[] = [
       { title: "Custom business software", body: "Applications built for a specific business need." },
       { title: "Internal business systems", body: "Tools your team uses daily to manage records, requests and operations." },
       { title: "Workflow systems", body: "Requests, approvals and status tracking with clear roles." },
-      { title: "Dashboards & web applications", body: "Browser-based apps with reporting views for managers." },
+      { title: "Dashboards & web applications", body: "Web applications with reporting views for managers." },
     ],
     deliverables: [
       "Process map and written scope",

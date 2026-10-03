@@ -11,9 +11,9 @@ const DESC = "Selected websites, web development, mobile app and brand identity 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Websites, Apps & Branding | Nedd Digital" },
+      { title: "Portfolio | Websites, Apps & Branding | Nedd Digital" },
       { name: "description", content: DESC },
-      { property: "og:title", content: "Portfolio — Websites, Apps & Branding | Nedd Digital" },
+      { property: "og:title", content: "Portfolio | Websites, Apps & Branding | Nedd Digital" },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

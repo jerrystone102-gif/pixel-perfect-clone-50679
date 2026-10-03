@@ -11,7 +11,7 @@ const DESC = "Contact Nedd Digital about bookkeeping, Power BI and Tableau dashb
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Nedd Digital — Let's Discuss Your Project" },
+      { title: "Contact Nedd Digital | Let's Discuss Your Project" },
       { name: "description", content: DESC },
       { property: "og:title", content: "Contact Nedd Digital" },
       { property: "og:description", content: DESC },
