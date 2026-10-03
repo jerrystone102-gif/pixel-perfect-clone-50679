@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ChevronDown, Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/nedd-digital-logo.png.asset.json";
-import { CONTACT, SERVICES, TRACKS, type Track } from "@/lib/site";
+import { CONTACT, SERVICES } from "@/lib/site";
 
 const NAV = [
   { to: "/products/leave-management", label: "Products" },
@@ -19,12 +19,10 @@ function Logo({ light = false }: { light?: boolean }) {
   );
 }
 
-function ServiceColumn({ track, onNavigate }: { track: Track; onNavigate?: () => void }) {
+function ServiceList({ onNavigate }: { onNavigate?: () => void }) {
   return (
-    <div>
-      <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">{TRACKS[track].name}</p>
-      <ul className="space-y-1">
-        {SERVICES.filter((s) => s.track === track).map((s) => (
+    <ul className="space-y-1">
+        {SERVICES.map((s) => (
           <li key={s.slug}>
             <Link
               to="/services/$slug"
@@ -37,7 +35,6 @@ function ServiceColumn({ track, onNavigate }: { track: Track; onNavigate?: () =>
           </li>
         ))}
       </ul>
-    </div>
   );
 }
 
@@ -78,11 +75,10 @@ export function Header() {
               Services <ChevronDown className={`h-4 w-4 transition-transform ${menu ? "rotate-180" : ""}`} />
             </button>
             {menu && (
-              <div className="absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-2">
-                <div className="grid grid-cols-2 gap-6 rounded-xl border bg-popover p-5 shadow-xl">
-                  <ServiceColumn track="finance" onNavigate={close} />
-                  <ServiceColumn track="digital" onNavigate={close} />
-                  <Link to="/services" onClick={close} className="col-span-2 border-t pt-3 text-sm font-semibold text-navy-soft hover:underline">
+              <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-2">
+                <div className="rounded-xl border bg-popover p-4 shadow-xl">
+                  <ServiceList onNavigate={close} />
+                  <Link to="/services" onClick={close} className="mt-3 block border-t pt-3 text-sm font-semibold text-navy-soft hover:underline">
                     See all services →
                   </Link>
                 </div>
@@ -107,9 +103,8 @@ export function Header() {
       {open && (
         <div className="max-h-[calc(100vh-4.5rem)] overflow-y-auto border-t bg-background px-5 pb-8 pt-4 lg:hidden">
           <Link to="/" onClick={close} className="block py-2 text-lg font-semibold">Home</Link>
-          <div className="my-4 grid gap-6 sm:grid-cols-2">
-            <ServiceColumn track="finance" onNavigate={close} />
-            <ServiceColumn track="digital" onNavigate={close} />
+          <div className="my-4">
+            <ServiceList onNavigate={close} />
           </div>
           {NAV.map((n) => (
             <Link key={n.to} to={n.to} onClick={close} className="block py-2 text-lg font-semibold">
@@ -135,25 +130,18 @@ export function Footer() {
             Business, finance, data and technology solutions for growing businesses.
           </p>
         </div>
-        {(["finance", "digital"] as const).map((t) => (
-          <div key={t}>
-            <p className="text-sm font-semibold text-accent">{TRACKS[t].name}</p>
-            <ul className="mt-4 space-y-2 text-sm">
-              {SERVICES.filter((s) => s.track === t).map((s) => (
+        <div className="lg:col-span-2">
+            <p className="text-sm font-semibold text-accent">Services</p>
+            <ul className="mt-4 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2">
+              {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link to="/services/$slug" params={{ slug: s.slug }} className="text-on-navy-muted hover:text-on-navy">
                     {s.name}
                   </Link>
                 </li>
               ))}
-              {t === "digital" && (
-                <li>
-                  <Link to="/products/leave-management" className="text-on-navy-muted hover:text-on-navy">Leave Management Software</Link>
-                </li>
-              )}
             </ul>
-          </div>
-        ))}
+        </div>
         <div>
           <p className="text-sm font-semibold text-accent">Contact</p>
           <address className="mt-4 space-y-3 text-sm not-italic text-on-navy-muted">
