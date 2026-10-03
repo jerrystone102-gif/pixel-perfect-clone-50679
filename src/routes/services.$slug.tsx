@@ -34,7 +34,7 @@ function ServicePage() {
       </PageHero>
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
         <h2 className="text-3xl font-semibold text-navy">{s.problemTitle}</h2>
-        <ul className="mt-6 space-y-3 text-muted-foreground">{s.problems.map((p) => <li key={p}>— {p}</li>)}</ul>
+        <ul className="mt-6 list-disc space-y-3 pl-5 text-muted-foreground">{s.problems.map((p) => <li key={p}>{p}</li>)}</ul>
         <p className="mt-8 max-w-3xl text-lg">{s.solution}</p>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {s.offerings.map((o) => (

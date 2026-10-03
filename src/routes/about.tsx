@@ -74,7 +74,7 @@ function Page() {
                   <p className="mt-4 text-sm text-muted-foreground">
                     {t === "finance"
                       ? "QuickBooks bookkeeping, cleanup and migration, Power BI dashboards and business automation."
-                      : "Websites, custom software, mobile apps, logo and brand design — plus our own Leave Management Software."}
+                      : "Websites, custom software, mobile apps, logo and brand design, plus our own Leave Management Software."}
                   </p>
                 </div>
               </Reveal>

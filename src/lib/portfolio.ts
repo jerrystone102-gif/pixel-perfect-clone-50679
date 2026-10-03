@@ -65,7 +65,7 @@ function build(category: PortfolioCategory, prefix: string, count: number, tall 
     const n = pad(i + 1);
     const cover = U[tall ? `${prefix}-${n}-cover.webp` : `${prefix}-${n}.webp`];
     const full = (tall ? U[`${prefix}-${n}-full.webp`] : cover) ?? "";
-    const title = `${CATEGORY_LABEL[category]} — Project ${n}`;
+    const title = `${CATEGORY_LABEL[category]} Project ${n}`;
     return {
       id: `${prefix}-${n}`,
       category,

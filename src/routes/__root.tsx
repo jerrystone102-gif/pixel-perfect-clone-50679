@@ -79,10 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Nedd Digital — Bookkeeping, Data & Technology" },
+      { title: "Nedd Digital | Bookkeeping, Data & Technology" },
       { name: "description", content: "QuickBooks bookkeeping, Power BI dashboards, automation, websites, software and branding for growing businesses." },
       { name: "author", content: "Nedd Digital" },
-      { property: "og:title", content: "Nedd Digital — Bookkeeping, Data & Technology" },
+      { property: "og:title", content: "Nedd Digital | Bookkeeping, Data & Technology" },
       { property: "og:description", content: "QuickBooks bookkeeping, Power BI dashboards, automation, websites, software and branding for growing businesses." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

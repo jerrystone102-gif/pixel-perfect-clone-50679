@@ -9,9 +9,9 @@ import { PORTFOLIO, CATEGORY_LABEL } from "@/lib/portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Nedd Digital — Bookkeeping, Power BI & Custom Software" },
+      { title: "Nedd Digital | Bookkeeping, Power BI & Custom Software" },
       { name: "description", content: "From messy books to clear insights and working software: QuickBooks bookkeeping, Power BI dashboards, automation, websites, apps and branding." },
-      { property: "og:title", content: "Nedd Digital — Bookkeeping, Power BI & Custom Software" },
+      { property: "og:title", content: "Nedd Digital | Bookkeeping, Power BI & Custom Software" },
       { property: "og:description", content: "QuickBooks bookkeeping, Power BI dashboards, automation, websites, apps and branding for growing businesses." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
