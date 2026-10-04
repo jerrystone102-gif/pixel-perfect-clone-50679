@@ -64,12 +64,12 @@
   --color-navy-soft: var(--navy-soft);
   --color-on-navy: var(--on-navy);
   --color-on-navy-muted: var(--on-navy-muted);
-  --font-display: "Clash Display", "Sora", system-ui, sans-serif;
-  --font-sans: "Sora", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.35rem;
   --background: oklch(0.985 0.006 85);
   --foreground: oklch(0.24 0.06 252);
   --card: oklch(1 0 0);
@@ -123,7 +123,7 @@
 @layer base {
   html { scroll-behavior: smooth; }
   body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0; }
 }
 
 @utility reveal {
@@ -137,6 +137,9 @@
   background-image: linear-gradient(to right, color-mix(in oklab, var(--on-navy) 7%, transparent) 1px, transparent 1px),
     linear-gradient(to bottom, color-mix(in oklab, var(--on-navy) 7%, transparent) 1px, transparent 1px);
   background-size: 48px 48px;
+}
+@utility editorial-rule {
+  background-image: linear-gradient(to right, var(--accent) 0 4rem, var(--border) 4rem 100%);
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
