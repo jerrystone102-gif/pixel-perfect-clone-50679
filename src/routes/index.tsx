@@ -64,10 +64,10 @@ function Index() {
             </div>
           </div>
           <div className="relative hidden min-h-[560px] lg:col-span-5 lg:block">
-            <Link to="/portfolio" search={{ item: PREVIEW[0]?.id }} className="absolute left-0 top-0 h-[62%] w-[78%] overflow-hidden border border-on-navy/20 bg-muted">
+            <Link to="/portfolio" search={PREVIEW[0]?.id ? { item: PREVIEW[0].id } : {}} className="absolute left-0 top-0 h-[62%] w-[78%] overflow-hidden border border-on-navy/20 bg-muted">
               <img src={PREVIEW[0]?.cover} alt={PREVIEW[0]?.alt} className="h-full w-full object-cover object-top transition-transform duration-700 hover:scale-105" />
             </Link>
-            <Link to="/portfolio" search={{ item: PREVIEW[2]?.id }} className="absolute bottom-0 right-0 h-[52%] w-[58%] overflow-hidden border-8 border-navy bg-muted">
+            <Link to="/portfolio" search={PREVIEW[2]?.id ? { item: PREVIEW[2].id } : {}} className="absolute bottom-0 right-0 h-[52%] w-[58%] overflow-hidden border-8 border-navy bg-muted">
               <img src={PREVIEW[2]?.cover} alt={PREVIEW[2]?.alt} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
             </Link>
             <p className="absolute bottom-4 left-0 max-w-36 text-[11px] uppercase tracking-[0.18em] text-on-navy-muted">Selected website and app work</p>
