@@ -13,8 +13,8 @@ const NAV = [
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <Link to="/" className="flex items-center gap-2.5" aria-label="Nedd Digital home">
-      <img src={logo.url} alt="" width={40} height={40} className="h-10 w-10 rounded-md bg-card object-contain p-0.5" />
-      <span className={`font-display text-lg font-semibold ${light ? "text-on-navy" : "text-navy"}`}>Nedd Digital</span>
+      <img src={logo.url} alt="" width={40} height={40} className="h-9 w-9 rounded-sm bg-card object-contain p-0.5" />
+      <span className={`font-sans text-base font-semibold ${light ? "text-on-navy" : "text-navy"}`}>Nedd Digital</span>
     </Link>
   );
 }
@@ -76,10 +76,10 @@ export function Header() {
             </button>
             {menu && (
               <div className="absolute left-1/2 top-full w-80 -translate-x-1/2 pt-2">
-                <div className="rounded-xl border bg-popover p-4 shadow-xl">
+                <div className="rounded-sm border bg-popover p-4 shadow-xl">
                   <ServiceList onNavigate={close} />
                   <Link to="/services" onClick={close} className="mt-3 block border-t pt-3 text-sm font-semibold text-navy-soft hover:underline">
-                    See all services →
+                    See all services
                   </Link>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Link to="/contact" className="hidden rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex">
+          <Link to="/contact" className="hidden rounded-sm bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex">
             Contact us
           </Link>
           <button type="button" className="rounded-md p-2 lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((v) => !v)}>
@@ -111,7 +111,7 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <Link to="/contact" onClick={close} className="mt-4 flex justify-center rounded-full bg-accent px-5 py-3 font-semibold text-accent-foreground">
+          <Link to="/contact" onClick={close} className="mt-4 flex justify-center rounded-sm bg-accent px-5 py-3 font-semibold text-accent-foreground">
             Contact us
           </Link>
         </div>

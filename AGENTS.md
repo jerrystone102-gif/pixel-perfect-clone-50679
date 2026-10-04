@@ -12,3 +12,4 @@
 ## Project architecture
 
 - Keep all public services in one shared service list; this prevents menus, pages, and forms from drifting out of sync.
+- Use existing portfolio assets as the primary visual library across public pages; this keeps imagery authentic and consistent.

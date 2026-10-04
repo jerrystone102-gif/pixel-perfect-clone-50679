@@ -8,11 +8,8 @@ export const CONTACT = {
 
 export const LEAVE_DEMO_URL = "https://leave-managment-mock-data.vercel.app/";
 
-export type Track = "finance" | "digital";
-
 export type Service = {
   slug: string;
-  track: Track;
   name: string;
   short: string;
   metaTitle: string;
@@ -42,7 +39,6 @@ const standardProcess = [
 export const SERVICES: Service[] = [
   {
     slug: "bookkeeping-quickbooks",
-    track: "finance",
     name: "Bookkeeping & QuickBooks",
     short: "Accurate, reconciled books in QuickBooks, closed every month and ready for your CPA.",
     metaTitle: "Bookkeeping & QuickBooks Services | Nedd Digital",
@@ -111,7 +107,6 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "power-bi-data-analytics",
-    track: "finance",
     name: "Power BI & Data Analytics",
     short: "Power BI and Tableau dashboards built on your QuickBooks, Excel and SQL data.",
     metaTitle: "Power BI & Tableau Dashboards, Data Analytics | Nedd Digital",
@@ -157,7 +152,6 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "website-design-development",
-    track: "digital",
     name: "Website Design & Development",
     short: "Fast, responsive business websites and landing pages that explain what you do clearly.",
     metaTitle: "Website Design & Development | Nedd Digital",
@@ -192,7 +186,6 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "custom-software-development",
-    track: "digital",
     name: "Custom Software Development",
     short: "Internal systems, workflow tools and web applications built around how you work.",
     metaTitle: "Custom Software Development | Nedd Digital",
@@ -233,7 +226,6 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "mobile-app-development",
-    track: "digital",
     name: "Mobile App Development",
     short: "Mobile applications built from your business requirements, from design to deployment.",
     metaTitle: "Mobile App Development | Nedd Digital",
@@ -262,7 +254,6 @@ export const SERVICES: Service[] = [
   },
   {
     slug: "logo-brand-design",
-    track: "digital",
     name: "Logo & Brand Design",
     short: "Logos, visual identity and brand assets that make your business recognizable.",
     metaTitle: "Logo & Brand Design | Nedd Digital",
@@ -292,17 +283,6 @@ export const SERVICES: Service[] = [
 ];
 
 export const getService = (slug: string) => SERVICES.find((s) => s.slug === slug);
-
-export const TRACKS: Record<Track, { name: string; lead: string }> = {
-  finance: {
-    name: "Business, Finance & Insights",
-    lead: "Books that are reconciled every month, dashboards that show what's actually happening, and fewer hours spent chasing numbers that should already be there.",
-  },
-  digital: {
-    name: "Digital & Technology",
-    lead: "Websites, internal tools, apps and branding built around how your business runs day to day, not a template that almost fits.",
-  },
-};
 
 export const LEAVE_FEATURES = [
   { title: "Employee, manager & admin roles", body: "Separate views for employees, managers and admins, each seeing only what's relevant to their role." },
