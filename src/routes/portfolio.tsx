@@ -5,15 +5,16 @@ import { PageHero, CtaBand, Eyebrow, PrimaryLink } from "@/components/site/Block
 import { PortfolioGrid } from "@/components/site/PortfolioGrid";
 import leaveImg from "@/assets/leave-management-demo.jpg.asset.json";
 import { PORTFOLIO, PORTFOLIO_CATEGORIES, type PortfolioCategory } from "@/lib/portfolio";
+import { Button } from "@/components/ui/button";
 
-const DESC = "Selected websites, web development, mobile app and brand identity work by Nedd Digital, plus our Leave Management Software product.";
+const DESC = "Explore Nedd Digital websites, mobile apps, brand identities, data analysis dashboards and Leave Management Software.";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio | Websites, Apps & Branding | Nedd Digital" },
+      { title: "Portfolio | Dashboards, Websites & Software | Nedd Digital" },
       { name: "description", content: DESC },
-      { property: "og:title", content: "Portfolio | Websites, Apps & Branding | Nedd Digital" },
+      { property: "og:title", content: "Portfolio | Dashboards, Websites & Software | Nedd Digital" },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -34,7 +35,7 @@ function Page() {
       <PageHero
         eyebrow="Portfolio"
         title="Work that shows what we build."
-        lead="Explore selected websites, digital experiences, mobile applications and brand identities created for real business needs."
+        lead="Explore selected websites, mobile applications, brand identities, data analysis dashboards and our Leave Management Software."
       />
 
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 md:py-20">
@@ -44,7 +45,8 @@ function Page() {
 
         <div role="group" aria-label="Filter projects by category" className="mt-10 flex flex-wrap gap-2">
           {PORTFOLIO_CATEGORIES.map((c) => (
-            <button
+            <Button
+              variant="outline"
               key={c.id}
               type="button"
               aria-pressed={cat === c.id}
@@ -52,7 +54,7 @@ function Page() {
               className={`rounded-full border px-5 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${cat === c.id ? "border-navy bg-navy text-on-navy" : "text-navy hover:bg-muted"}`}
             >
               {c.label} <span className="ml-1 opacity-60">{count(c.id)}</span>
-            </button>
+            </Button>
           ))}
         </div>
 
