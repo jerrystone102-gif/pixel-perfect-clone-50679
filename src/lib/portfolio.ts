@@ -1,9 +1,13 @@
 import urls from "./portfolio-assets.json";
+import leaveDashboard from "@/assets/leave-management-demo.jpg.asset.json";
+import analyticsDashboard from "@/assets/data-analysis-dashboard.png.asset.json";
 
-export type PortfolioCategory = "websites" | "webdev" | "mobile" | "branding";
+export type PortfolioCategory = "websites" | "webdev" | "mobile" | "branding" | "analytics" | "software";
 
 export const PORTFOLIO_CATEGORIES: { id: "all" | PortfolioCategory; label: string }[] = [
   { id: "all", label: "All" },
+  { id: "analytics", label: "Data Analytics" },
+  { id: "software", label: "Software" },
   { id: "websites", label: "Websites" },
   { id: "webdev", label: "Web Development" },
   { id: "mobile", label: "Mobile Apps" },
@@ -11,6 +15,8 @@ export const PORTFOLIO_CATEGORIES: { id: "all" | PortfolioCategory; label: strin
 ];
 
 export const CATEGORY_LABEL: Record<PortfolioCategory, string> = {
+  analytics: "Data Analytics",
+  software: "Software",
   websites: "Website Design",
   webdev: "Website Development",
   mobile: "Mobile App",
@@ -33,6 +39,8 @@ const U = urls as Record<string, string>;
 const pad = (n: number) => String(n).padStart(2, "0");
 
 const COPY: Record<PortfolioCategory, string[]> = {
+  analytics: ["Product sales and market share dashboard."],
+  software: ["Leave requests, approvals and balances in one place."],
   websites: [
     "Designed around usability, clarity and the customer journey.",
     "Built to create a stronger and more professional online presence.",
@@ -80,6 +88,8 @@ function build(category: PortfolioCategory, prefix: string, count: number, tall 
 }
 
 export const PORTFOLIO: PortfolioItem[] = [
+  { id: "data-analysis-dashboard", category: "analytics", title: "Product Sales & Market Share Dashboard", description: "A data analysis dashboard showing sales, market share, product performance and revenue trends.", cover: analyticsDashboard.url, full: analyticsDashboard.url, tall: false, alt: "Product sales and market share data analysis dashboard" },
+  { id: "leave-management-dashboard", category: "software", title: "Leave Management Software", description: "Our leave management dashboard for leave requests, approvals, balances and administration.", cover: leaveDashboard.url, full: leaveDashboard.url, tall: false, alt: "Nedd Digital Leave Management Software admin dashboard" },
   ...build("websites", "wd", 22, true),
   ...build("webdev", "dev", 10),
   ...build("mobile", "mob", 6),

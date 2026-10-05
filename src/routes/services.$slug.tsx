@@ -1,6 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { PageHero, ProcessSteps, CtaBand, PrimaryLink } from "@/components/site/Blocks";
 import { getService } from "@/lib/site";
+import analyticsDashboard from "@/assets/data-analysis-dashboard.png.asset.json";
+import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -26,13 +28,15 @@ export const Route = createFileRoute("/services/$slug")({
 });
 
 function ServicePage() {
-  const s = getService(Route.useLoaderData().slug)!;
+  const s = getService(Route.useLoaderData().slug);
+  if (!s) throw notFound();
   return (
     <>
       <PageHero eyebrow={s.name} title={s.heroTitle} lead={s.heroLead}>
         <PrimaryLink to="/contact">{s.cta}</PrimaryLink>
       </PageHero>
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        {s.slug === "power-bi-data-analytics" && <Link to="/portfolio" search={{ item: "data-analysis-dashboard" }} aria-label="View data analysis dashboard in portfolio"><img src={analyticsDashboard.url} alt="Product sales and market share data analysis dashboard" className="mb-12 w-full rounded-sm border" /></Link>}
         <h2 className="text-3xl font-semibold text-navy">{s.problemTitle}</h2>
         <ul className="mt-6 list-disc space-y-3 pl-5 text-muted-foreground">{s.problems.map((p) => <li key={p}>{p}</li>)}</ul>
         <p className="mt-8 max-w-3xl text-lg">{s.solution}</p>
@@ -46,7 +50,7 @@ function ServicePage() {
         </div>
       </section>
       <ProcessSteps steps={s.process} />
-      <CtaBand title={s.related.prompt} body="Explore a related Nedd Digital solution." cta="Talk to us" />
+      {s.related.slug === "leave-management" ? <CtaBand title="Leave Management Software" body="Manage leave requests, approvals and balances in one place." cta="Explore the product" to="/products/leave-management" /> : <CtaBand title={s.related.prompt} body="Explore a related Nedd Digital solution." cta="Talk to us" />}
     </>
   );
 }

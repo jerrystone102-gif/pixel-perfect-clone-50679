@@ -6,8 +6,6 @@ export const CONTACT = {
   address: "111 Town Square Place, Jersey City, NJ",
 };
 
-export const LEAVE_DEMO_URL = "https://leave-managment-mock-data.vercel.app/";
-
 export type Service = {
   slug: string;
   name: string;
@@ -222,7 +220,7 @@ export const SERVICES: Service[] = [
     ],
     process: standardProcess,
     cta: "Discuss your system",
-    related: { slug: "leave-management", prompt: "Looking for an internal HR workflow?" },
+    related: { slug: "leave-management", prompt: "Leave Management Software" },
   },
   {
     slug: "mobile-app-development",

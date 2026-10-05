@@ -1,6 +1,7 @@
-import { LEAVE_FEATURES, LEAVE_DEMO_URL } from "@/lib/site";
+import { LEAVE_FEATURES } from "@/lib/site";
+import leaveDashboard from "@/assets/leave-management-demo.jpg.asset.json";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, CtaBand } from "@/components/site/Blocks";
+import { PageHero, CtaBand, PrimaryLink } from "@/components/site/Blocks";
 
 export const Route = createFileRoute("/products/leave-management")({
   head: () => ({
@@ -19,8 +20,9 @@ export const Route = createFileRoute("/products/leave-management")({
 function Page() {
   return (
     <>
-      <PageHero eyebrow="Product" title="Requests, approvals and real leave balances, in one place." lead="We built this because we needed it ourselves and couldn't find anything that didn't feel bloated. Employees submit requests, managers approve or decline them with a clear trail behind every decision, and the leave balance updates the moment a request is approved, so nobody is working off a number that's already out of date." />
+      <PageHero eyebrow="Product" title="Leave Management Software" lead="We built this because we needed it ourselves and couldn't find anything that didn't feel bloated. Employees submit requests, managers approve or decline them with a clear trail behind every decision, and the leave balance updates the moment a request is approved, so nobody is working off a number that's already out of date." />
       <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8">
+        <img src={leaveDashboard.url} alt="Nedd Digital Leave Management Software admin dashboard" className="mb-12 w-full rounded-sm border" />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {LEAVE_FEATURES.map((f) => (
             <div key={f.title} className="rounded-2xl border bg-card p-6">
@@ -29,7 +31,7 @@ function Page() {
             </div>
           ))}
         </div>
-        <a href={LEAVE_DEMO_URL} target="_blank" rel="noreferrer" className="mt-10 inline-flex rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground">Try the live demo</a>
+        <div className="mt-10"><PrimaryLink to="/contact">Enquire about Leave Management Software</PrimaryLink></div>
       </section>
       <CtaBand title="Let's talk about your business" body="Tell us what you need and we'll reply with clear next steps." cta="Contact us" />
     </>
